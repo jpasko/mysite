@@ -1,5 +1,5 @@
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render_to_response
+from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.core.urlresolvers import reverse
@@ -29,7 +29,8 @@ def main(request):
 def post(request, post_id):
     """Single post with comments and comment form"""
 
-    post = Post.objects.get(pk=post_id)
+    # Handle the case where a post_id doesn't exist in the database.
+    post = get_object_or_404(Post, pk=post_id)
     return render_to_response('blog/post.html',
                               {"post": post, "user": request.user},
                                RequestContext(request))
