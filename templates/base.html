@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}James Pasko{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ STATIC_URL }}img/favicon.png">
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      {% block header %}
+      <nav>
+	<a href="/" title="James Pasko" id="home">
+	  <img src="{{ STATIC_URL }}img/jamespasko.png">
+	</a>
+        <ul id="navlist">
+         <li>
+	    <a href="/about" id="showabout">about</a>
+	  </li>
+          <li>
+	    <a href="/blog/">blog</a>
+	  </li>
+          <li>
+	    <a href="/contact" id="showemail">contact</a>
+	  </li>
+        </ul>
+      </nav>
+      {% endblock %}
+    </header>
+    <div id="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <footer>
+      {% block footer %}
+      <ul>
+	<li>
+	  <a href="https://twitter.com/jamespasko" target="_blank">
+	    <img src="{{ STATIC_URL }}img/twitter_logo.png">
+	  </a>
+	</li>
+	<li>
+	  <a href="http://www.facebook.com/jim.pasko.3?fref=ts" target="_blank">
+	    <img src="{{ STATIC_URL }}img/facebook_logo.png">
+	  </a>
+	</li>
+	<li>
+	  <a href="" target="_blank">
+	    <img src="{{ STATIC_URL }}img/linkedin_logo.gif">
+	  </a>
+	</li>
+      </ul>
+      <div id="copy">
+	&copy James Pasko
+      </div>
+      {% endblock %}
+    </footer>
+  </body>
+</html>

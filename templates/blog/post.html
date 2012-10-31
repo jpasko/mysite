@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main">
+  <ul>
+    <div class="title">
+      <h1>{{ post.title }}</h1>
+    </div>
+    <ul>
+      <div class="time">{{ post.created|date:"M. d, Y" }}</div>
+      <div class="body">{{ post.body|linebreaks }}</div>
+    </ul>
+  </ul>
+</div>
+{% endblock %}

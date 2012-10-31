@@ -1,0 +1,9 @@
+venv
+*.pyc
+
+# Ignore unnecessary files
+doc/
+*.swp
+*~
+.project
+.DS_Store
